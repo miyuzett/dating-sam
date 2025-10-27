@@ -3,7 +3,7 @@ import random
 import time
 
 #  Título y audio DE JUSTIN BIEBER
-st.markdown("<h1 style='text-align: center; color: pink;'>:revolving_hearts: Dating Sam :revolving_hearts:</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: pink;'>💞 Dating Sam 💞</h1>", unsafe_allow_html=True)
 st.audio("videoplayback (1).m4a")
 col1, col2, col3 = st.columns(3)
 col2.image("1000046783.jpg")
@@ -129,3 +129,4 @@ else:
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+
