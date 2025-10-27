@@ -2,11 +2,15 @@ import streamlit as st
 import random
 import time
 
-st.title("Dating Sam 💞")
+#  Título y audio DE JUSTIN BIEBER
+st.markdown("<h1 style='text-align: center; color: pink;'>:revolving_hearts: Dating Sam :revolving_hearts:</h1>", unsafe_allow_html=True)
 st.audio("videoplayback (1).m4a")
 col1, col2, col3 = st.columns(3)
-
 col2.image("1000046783.jpg")
+
+name = st.text_input("Ingresa tu nombre")
+
+# Preguntas
 questions = [
     {
         "question": "¿Cómo se llaman los padres de Sam? 😱🐱",
@@ -70,11 +74,19 @@ questions = [
     },
 ]
 
-# Estado inicial
+#Estado inicial
 if "count" not in st.session_state:
     st.session_state.count = 0
+if "correct" not in st.session_state:
+    st.session_state.correct = 0
+if "wrong" not in st.session_state:
+    st.session_state.wrong = 0
 
-# Verificar si aún hay preguntas
+# Mostrar progreso guardado anteriormente de las respuestas acertadas y erradas 
+st.progress(st.session_state.count / len(questions))
+st.caption(f"Pregunta {st.session_state.count + 1} de {len(questions)}")
+
+# Lógica principal
 if st.session_state.count < len(questions):
     question = questions[st.session_state.count]
     st.subheader(question["question"])
@@ -82,17 +94,38 @@ if st.session_state.count < len(questions):
 
     if st.button("Sube tu respuesta"):
         if selected_option == question["answer"]:
-            st.success("¡Ganaste! 🎉")
+            st.success("¡Ganaste! :partying:")
+            st.session_state.correct += 1
         else:
-            st.error(f"Morirás 😈 La respuesta correcta era: {question['answer']}")
+            st.error(f"Morirás :imp: La respuesta correcta era: {question['answer']}")
+            st.session_state.wrong += 1
 
         # Avanzar a la siguiente pregunta
         st.session_state.count += 1
         time.sleep(2)
         st.rerun()
 
+# Resultado final
 else:
-    st.success("Has terminado el quiz, para tener el ***_tesoro_*** de sam debes pasar a la siguiente pestaña.")
+    total = st.session_state.correct + st.session_state.wrong
+    porcentaje = (st.session_state.correct / total) * 100 if total > 0 else 0
+
+    st.success("felicidades has terminado el quiz:revolving_hearts: ")
+    st.write(f":white_check_mark: Correctas: **{st.session_state.correct}**")
+    st.write(f"❌ Incorrectas: **{st.session_state.wrong}**")
+    st.write(f":bar_chart: Porcentaje de aciertos: **{porcentaje:.2f}%**")
+
+    # Mensaje personalizado según el puntaje
+    if porcentaje == 100:
+        st.balloons()
+        st.markdown("🌹 **¡Eres el alma gemela de Sam!** 💍")
+    elif porcentaje >= 70:
+        st.markdown("¡Te llevas bien con Sam, pero puedes conocerlo mejor!:heart_eyes_cat:")
+    else:
+        st.markdown(":crying_cat_face: Sam dice que t/N estudie más sobre él...")
+
+    # Botón de reinicio
     if st.button("Reiniciar"):
-        st.session_state.count = 0
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
         st.rerun()
