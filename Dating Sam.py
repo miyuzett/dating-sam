@@ -1,3 +1,5 @@
+import streamlit as st
+import streamlit
 st.title("_Dating Sam_:heart_eyes:")
 st.header("¿eres un verdadero fan del niño sam?:kissing_heart:")
 col1, col2 = st.columns(2)
@@ -32,6 +34,7 @@ col2.write(" nosotras somos simplemente aficionad@s del famoso niño sam y solo 
 col2.write("bueno sin mas que decir les dejamos a continuacion por si tienen mas preguntas nuestro siguiente formato: ")
 col2.write(" gmail: contacto@mega100.com")
 col2.write("numero: +1 (555) 234-9876")
+
 
 
 
