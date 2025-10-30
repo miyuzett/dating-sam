@@ -2,7 +2,7 @@
 import streamlit as st
 
 #titulo
-st.title("**se conocedor de la historia detras**")
+st.markdown("<h1 style='text-align: center; color: pink;'>💞 Se conocedor de la historia detras 💞</h1>", unsafe_allow_html=True)
 
 
 col1, col2 = st.columns(2)
@@ -27,6 +27,7 @@ col1.write("bueno sin mas que decir les dejamos a continuacion por si tienen mas
 
 col2.image("Captura de pantalla 2025-09-01 133531.png")
  
+
 
 
 
