@@ -17,7 +17,7 @@ name = st.text_input("Ingresa tu nombre")
 # Preguntas
 questions = [
     {
-        "question": "¿Cómo se llaman los padres de Sam? 😱🐱",
+        "question": "¿Cómo se llaman los padres de Sam? :scream::smiley_cat:",
         "options": [
             "Selena Gómez y Justin Bieber",
             "Daniel el más variado y Matías Venegas",
@@ -116,13 +116,13 @@ else:
 
     st.success("felicidades has terminado el quiz:revolving_hearts: ")
     st.write(f":white_check_mark: Correctas: **{st.session_state.correct}**")
-    st.write(f"❌ Incorrectas: **{st.session_state.wrong}**")
+    st.write(f":x: Incorrectas: **{st.session_state.wrong}**")
     st.write(f":bar_chart: Porcentaje de aciertos: **{porcentaje:.2f}%**")
 
     # Mensaje personalizado según el puntaje
     if porcentaje == 100:
         st.balloons()
-        st.markdown("🌹 **¡Eres el alma gemela de Sam!** 💍")
+        st.markdown(":rose: **¡Eres el alma gemela de Sam!** 💍")
     elif porcentaje >= 70:
         st.markdown("¡Te llevas bien con Sam, pero puedes conocerlo mejor!:heart_eyes_cat:")
     else:
@@ -133,5 +133,6 @@ else:
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+
 
 
