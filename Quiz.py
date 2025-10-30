@@ -1,3 +1,4 @@
+#importar librerias
 import streamlit as st
 import random
 import time
@@ -5,9 +6,12 @@ import time
 #  Título y audio DE JUSTIN BIEBER
 st.markdown("<h1 style='text-align: center; color: pink;'>💞 Dating Sam 💞</h1>", unsafe_allow_html=True)
 st.audio("videoplayback (1).m4a")
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(3) #columnas
+
+#imagenes
 col2.image("1000046783.jpg")
 
+#ingresa nombre
 name = st.text_input("Ingresa tu nombre")
 
 # Preguntas
@@ -129,4 +133,5 @@ else:
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+
 
