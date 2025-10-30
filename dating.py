@@ -1,3 +1,4 @@
+#librerias
 import streamlit as st
 
 # Configurar la pagina
@@ -9,7 +10,6 @@ st.set_page_config(
 
 
 #barra de navegación
-
-
 pg = st.navigation(["home page.py","Dating Sam.py","Quiz.py"])
+
 pg.run()
