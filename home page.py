@@ -22,11 +22,12 @@ col1.header("¿de donde sacamos la idea de la app de citas?")
 
 #texto
 col1.write("sacamos la idea de un viejo juego de app de citas de Justin Bieber el cual tiene la mecanica de dar un puntaje al final, nosotras quisimos recrear eso pero con el niño sam y preguntas personalizadas sobre el ")
-col1.image("Captura de pantalla 2025-10-20 132425.png")
-col1.write("bueno sin mas que decir les dejamos a continuacion por si tienen mas preguntas, consultar al numero: ")
+col2.image("Captura de pantalla 2025-10-20 132425.png")
+col1.write("bueno sin mas que decir les dejamos a continuacion por si tienen mas preguntas, consultar al numero: _***+1 (555) 234-9876***_")
 
 col2.image("Captura de pantalla 2025-09-01 133531.png")
  
+
 
 
 
